@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-enum Item {Mead, Ale, Wine, Soup}
-
 export (int) var speed = 200
 
 onready var anim_player = $AnimationPlayer
