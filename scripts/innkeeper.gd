@@ -12,6 +12,8 @@ onready var preview_icon = $SpeechBubble/PreviewIcon
 var items = []
 var available_interactable = null
 var interaction_cooldown = 0
+var previous_bubble_open = false
+var bubble_open = false
 
 func _physics_process(_delta):
 	check_interactions()
@@ -38,6 +40,7 @@ func check_interactions():
 func display_interactions():
 	if available_interactable and interaction_cooldown <= 0:
 		speech_bubble.visible = true
+		bubble_open = true
 		if items.size() < items_limit:
 			preview_icon.texture = load(available_interactable.get_icon_path())
 			if Input.is_action_pressed("interact"):
@@ -46,6 +49,7 @@ func display_interactions():
 		else:
 			preview_icon.texture = preload("res://assets/X.png")
 	else:
+		bubble_open = false
 		speech_bubble.visible = false
 
 func move():
@@ -63,6 +67,10 @@ func move():
 	if Input.is_action_pressed('up'):
 		velocity.y -= 1
 		play_anim = "walk"
+	if !previous_bubble_open and bubble_open:
+		$SpeechBubble/AnimationPlayer.play("opening")
+		$SpeechBubble/PreviewIcon.visible = false
+	previous_bubble_open = bubble_open
 	velocity = velocity.normalized() * speed
 	velocity = move_and_slide(velocity)
 	anim_player.play(play_anim)

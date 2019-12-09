@@ -40,7 +40,7 @@ position = Vector2( 727.996, 278.231 )
 scale = Vector2( 0.358307, 0.358307 )
 
 [node name="Innkeeper" parent="." instance=ExtResource( 5 )]
-position = Vector2( 292.411, 409.836 )
+position = Vector2( 291.26, 408.685 )
 
 [node name="chair_side" parent="." instance=ExtResource( 6 )]
 
