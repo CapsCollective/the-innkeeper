@@ -143,6 +143,7 @@ position = Vector2( -19.5549, -11.9773 )
 shape = SubResource( 4 )
 
 [node name="SpeechBubble" type="Sprite" parent="."]
+visible = false
 position = Vector2( -96.9088, -146.635 )
 texture = ExtResource( 3 )
 
