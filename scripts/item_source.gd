@@ -14,7 +14,7 @@ func is_interactable(player):
 
 func interact(player):
 	player.items.append(item)
-	bar.cups_available -= 1
+	bar.move_cups(1)
 
 func get_icon_path():
 	return icons[item]

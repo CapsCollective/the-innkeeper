@@ -6,7 +6,7 @@ func is_interactable(player):
 	return not player.items.empty()
 
 func interact(player):
-	bar.cups_available += player.items.size()
+	bar.move_cups(-player.items.size())
 	player.items = []
 	
 func get_icon_path():
