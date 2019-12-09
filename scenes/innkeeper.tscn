@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/speech.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 72.6462
+radius = 73.9998
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
@@ -115,15 +115,13 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 128.572
+radius = 120.0
 
 [node name="Innkeeper" type="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )
 z_index = 1
 script = ExtResource( 1 )
 max_interaction_cooldown = 50
-speed = 300
-items_limit = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -16.181, 74.4787 )
@@ -139,12 +137,14 @@ anims/idle = SubResource( 2 )
 anims/walk = SubResource( 3 )
 
 [node name="InteractionRange" type="Area2D" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
 position = Vector2( -11.373, -3.79536 )
 shape = SubResource( 4 )
 
 [node name="SpeechBubble" type="Sprite" parent="."]
+editor/display_folded = true
 visible = false
 position = Vector2( -96.9088, -146.635 )
 texture = ExtResource( 3 )
