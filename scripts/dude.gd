@@ -1,14 +1,10 @@
-extends Node2D
+extends Node
 
 enum Item {Mead, Ale, Wine, Soup}
 
 # Misc fields
 var velocity = Vector2()
 onready var anim_player = $AnimationPlayer
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 func _physics_process(_delta):
 	move()
