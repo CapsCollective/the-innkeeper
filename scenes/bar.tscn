@@ -4,18 +4,19 @@
 [ext_resource path="res://scenes/tap.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.00135, 8.4106 )
+extents = Vector2( 4.76726, 4.66781 )
 
 [node name="Bar" type="StaticBody2D"]
 scale = Vector2( 1.25, 1.25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 13.3391, 6.17311 )
+position = Vector2( 0.738807, 6.59312 )
 scale = Vector2( 48.88, 14.48 )
 shape = SubResource( 1 )
 
 [node name="Bar" type="Sprite" parent="."]
 position = Vector2( 0.094101, 0 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 
 [node name="Tap3" parent="Bar" instance=ExtResource( 2 )]
