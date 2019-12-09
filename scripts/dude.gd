@@ -1,20 +1,30 @@
-extends Node
+extends KinematicBody2D
 
 enum Item {Mead, Ale, Wine, Soup}
 
-# Misc fields
-var velocity = Vector2()
+export (int) var speed = 200
+
 onready var anim_player = $AnimationPlayer
 onready var interaction_range = $InteractionRange
 
 func _physics_process(_delta):
 	move()
-	play_animation()
 
 func move():
-	pass
+	var velocity = Vector2()
+	if Input.is_action_pressed('right'):
+		velocity.x += 1
+	if Input.is_action_pressed('left'):
+		velocity.x -= 1
+	if Input.is_action_pressed('down'):
+		velocity.y += 1
+	if Input.is_action_pressed('up'):
+		velocity.y -= 1
+	velocity = velocity.normalized() * speed
+	velocity = move_and_slide(velocity)
+	play_animation(velocity)
 
-func play_animation():
+func play_animation(velocity):
 	var play_anim
 	if velocity.x != 0 and velocity.y != 0:
 		if velocity.y > 0 and velocity.x < 0:
