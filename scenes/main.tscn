@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/bg.png" type="Texture" id=1]
 [ext_resource path="res://scenes/innkeeper.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/bar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/grain_overlay.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Table.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/chair_side.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/chair.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -33,16 +35,40 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 479.055, 352.322 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Table" parent="." instance=ExtResource( 5 )]
-position = Vector2( 683.303, 272.296 )
-scale = Vector2( 0.492966, 0.492966 )
-
 [node name="Table2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 257.338, 269.618 )
-scale = Vector2( 0.492966, 0.492966 )
+position = Vector2( 224.73, 281.308 )
+scale = Vector2( 0.358307, 0.358307 )
+
+[node name="Table3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 727.996, 278.231 )
+scale = Vector2( 0.358307, 0.358307 )
+
+[node name="chair_side" parent="." instance=ExtResource( 6 )]
+
+[node name="chair_side2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 352.61, 262.692 )
+
+[node name="chair_side3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 607.934, 262.692 )
+scale = Vector2( -0.35, 0.35 )
+
+[node name="chair_side4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 106.514, 262.692 )
+scale = Vector2( -0.35, 0.35 )
+
+[node name="chair" parent="." instance=ExtResource( 7 )]
+position = Vector2( 289.88, 201.183 )
+
+[node name="chair2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 172.245, 201.183 )
+
+[node name="chair3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 798.067, 201.183 )
+
+[node name="chair4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 671.007, 201.183 )
 
 [node name="Path2D" type="Path2D" parent="."]
-editor/display_folded = true
 position = Vector2( 0, 0.887695 )
 curve = SubResource( 1 )
 
