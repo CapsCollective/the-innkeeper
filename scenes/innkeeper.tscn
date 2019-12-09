@@ -506,6 +506,7 @@ radius = 40.444
 ]]
 z_index = 1
 script = ExtResource( 1 )
+items_limit = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 18.258 )

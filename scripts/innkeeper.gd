@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export (int) var max_interaction_cooldown = 100
 export (int) var speed = 200
+export (int) var items_limit
 
 onready var anim_player = $AnimationPlayer
 onready var interaction_range = $InteractionRange
@@ -28,7 +29,7 @@ func check_interactions():
 			available_interactable = area
 
 func display_interactions():
-	if interaction_cooldown <= 0 and items.size() < 4:
+	if interaction_cooldown <= 0 and items.size() < items_limit:
 		if Input.is_action_pressed("interact"):
 			items.append(available_interactable.dispense())
 			interaction_cooldown = max_interaction_cooldown
