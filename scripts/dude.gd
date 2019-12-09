@@ -5,6 +5,7 @@ enum Item {Mead, Ale, Wine, Soup}
 # Misc fields
 var velocity = Vector2()
 onready var anim_player = $AnimationPlayer
+onready var interaction_range = $InteractionRange
 
 func _physics_process(_delta):
 	move()
