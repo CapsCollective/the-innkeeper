@@ -1,14 +1,36 @@
 extends KinematicBody2D
 
+export (int) var max_interaction_cooldown = 100
 export (int) var speed = 200
 
 onready var anim_player = $AnimationPlayer
 onready var interaction_range = $InteractionRange
 
 var items = []
+var available_interactable = null
+var interaction_cooldown = 0
 
 func _physics_process(_delta):
+	check_interactions()
+	display_interactions()
 	move()
+	
+	if interaction_cooldown > 0:
+		interaction_cooldown -= 1
+
+func check_interactions():
+	var overlapping_areas = interaction_range.get_overlapping_areas()
+	if overlapping_areas.empty():
+		available_interactable = null
+	else:
+		for area in overlapping_areas:
+			available_interactable = area
+
+func display_interactions():
+	if interaction_cooldown <= 0 and items.size() <= 4:
+		if Input.is_action_pressed("interact"):
+			items.append(available_interactable.dispense())
+			interaction_cooldown = max_interaction_cooldown
 
 func move():
 	var velocity = Vector2()
