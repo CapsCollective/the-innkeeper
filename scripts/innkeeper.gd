@@ -36,7 +36,7 @@ func display_interactions():
 
 func move():
 	var velocity = Vector2()
-	var play_anim = "rest"
+	var play_anim
 	if Input.is_action_pressed('right'):
 		velocity.x += 1
 		play_anim = "walk"
@@ -51,4 +51,7 @@ func move():
 		play_anim = "walk"
 	velocity = velocity.normalized() * speed
 	velocity = move_and_slide(velocity)
-	anim_player.play(play_anim)
+	if play_anim:
+		anim_player.play(play_anim)
+	else:
+		anim_player.stop()
