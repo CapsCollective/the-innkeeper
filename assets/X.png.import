@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tap.png-d3df4773d0990e45ad773978618dc326.stex"
+path="res://.import/X.png-89ed484cc97fd231f36915152102400d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tap.png"
-dest_files=[ "res://.import/tap.png-d3df4773d0990e45ad773978618dc326.stex" ]
+source_file="res://assets/X.png"
+dest_files=[ "res://.import/X.png-89ed484cc97fd231f36915152102400d.stex" ]
 
 [params]
 
