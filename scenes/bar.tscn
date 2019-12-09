@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.64882, 10.4619 )
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Bar" type="StaticBody2D"]
+scale = Vector2( 1.25, 1.25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 6.00162, -8.57376 )
