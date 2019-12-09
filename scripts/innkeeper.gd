@@ -6,6 +6,8 @@ export (int) var items_limit = 3
 
 onready var anim_player = $AnimationPlayer
 onready var interaction_range = $InteractionRange
+onready var speech_bubble = $SpeechBubble
+onready var preview_icon = $SpeechBubble/PreviewIcon
 
 var items = []
 var interaction_cooldown = 0
@@ -20,6 +22,7 @@ func _physics_process(_delta):
 func check_interactions():
 	var overlapping_areas = interaction_range.get_overlapping_areas()
 	if overlapping_areas.empty():
+		speech_bubble.visible = false
 		return
 	var min_dist = 10000000000.0
 	var closest
@@ -28,6 +31,13 @@ func check_interactions():
 		if distance < min_dist:
 			min_dist = distance
 			closest = area
+
+	speech_bubble.visible = true
+	preview_icon.texture = load(closest.get_icon_path())
+	if not closest.is_interactable(self):
+		preview_icon.texture = preload("res://assets/X.png")
+		return
+
 	if interaction_cooldown <= 0 and Input.is_action_pressed("interact"):
 		interaction_cooldown = max_interaction_cooldown
 		closest.interact(self)
@@ -35,7 +45,7 @@ func check_interactions():
 
 func move():
 	var velocity = Vector2()
-	var play_anim
+	var play_anim = "idle"
 	if Input.is_action_pressed('right'):
 		velocity.x += 1
 		play_anim = "walk"
@@ -50,7 +60,4 @@ func move():
 		play_anim = "walk"
 	velocity = velocity.normalized() * speed
 	velocity = move_and_slide(velocity)
-	if play_anim:
-		anim_player.play(play_anim)
-	else:
-		anim_player.stop()
+	anim_player.play(play_anim)

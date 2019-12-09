@@ -1,0 +1,143 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/innkeeper.gd" type="Script" id=1]
+[ext_resource path="res://assets/npc.png" type="Texture" id=2]
+[ext_resource path="res://assets/speech.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 73.9998
+
+[sub_resource type="Animation" id=2]
+resource_name = "sit"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BodySprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BodySprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BodySprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "walk"
+length = 0.4
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("BodySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BodySprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BodySprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BodySprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[node name="Patron" type="KinematicBody2D" groups=[
+"dude",
+"active_dude",
+]]
+z_index = 1
+script = ExtResource( 1 )
+max_interaction_cooldown = 50
+items_limit = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -12.5446, 77.6605 )
+shape = SubResource( 1 )
+
+[node name="BodySprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/sit = SubResource( 2 )
+anims/walk = SubResource( 3 )
+
+[node name="SpeechBubble" type="Sprite" parent="."]
+position = Vector2( -78.4892, -181.172 )
+texture = ExtResource( 3 )
+
+[node name="PreviewIcon" type="Sprite" parent="SpeechBubble"]
+position = Vector2( -11.3639, -8.63651 )
+scale = Vector2( 0.4, 0.4 )
