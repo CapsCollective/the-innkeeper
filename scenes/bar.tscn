@@ -37,6 +37,7 @@ item = 1
 position = Vector2( -101.433, 28.8488 )
 
 [node name="Sink" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 88.4702, 128.561 )
 script = ExtResource( 4 )
 

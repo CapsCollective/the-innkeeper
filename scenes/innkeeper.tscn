@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/innkeeper.gd" type="Script" id=1]
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/keycap.png" type="Texture" id=4]
 [ext_resource path="res://assets/Dopetext-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://scripts/thought_bubble.gd" type="Script" id=6]
+[ext_resource path="res://assets/plate.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 72.6462
@@ -120,12 +121,11 @@ tracks/3/keys = {
 [sub_resource type="CircleShape2D" id=4]
 radius = 128.572
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=5]
 size = 80
 font_data = ExtResource( 5 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "idle"
+[sub_resource type="Animation" id=6]
 length = 0.8
 loop = true
 step = 0.4
@@ -190,8 +190,7 @@ tracks/4/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "opening"
+[sub_resource type="Animation" id=7]
 loop = true
 step = 0.4
 tracks/0/type = "value"
@@ -279,7 +278,7 @@ z_index = 1
 script = ExtResource( 1 )
 max_interaction_cooldown = 50
 speed = 300
-items_limit = 4
+drink_sprites = [ NodePath("Plate/Drink1"), NodePath("Plate/Drink2"), NodePath("Plate/Drink3") ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -16.181, 74.4787 )
@@ -295,14 +294,18 @@ anims/idle = SubResource( 2 )
 anims/walk = SubResource( 3 )
 
 [node name="InteractionRange" type="Area2D" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
 position = Vector2( -11.373, -3.79536 )
 shape = SubResource( 4 )
 
 [node name="SpeechBubble" type="Sprite" parent="."]
-position = Vector2( 134.913, -184.514 )
+editor/display_folded = true
+visible = false
+position = Vector2( 84.2286, -202.511 )
 scale = Vector2( 0.5, 0.5 )
+z_index = 2
 texture = ExtResource( 3 )
 hframes = 4
 frame = 2
@@ -323,10 +326,30 @@ margin_left = -7.56396
 margin_top = -61.5919
 margin_right = 50.436
 margin_bottom = 19.4081
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "E"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpeechBubble"]
-anims/idle = SubResource( 5 )
-anims/opening = SubResource( 6 )
+anims/idle = SubResource( 6 )
+anims/opening = SubResource( 7 )
 script = ExtResource( 6 )
+
+[node name="Plate" type="Sprite" parent="."]
+position = Vector2( 143.249, -21.8277 )
+scale = Vector2( 0.8, 0.3 )
+texture = ExtResource( 7 )
+
+[node name="Drink1" type="Sprite" parent="Plate"]
+visible = false
+position = Vector2( 9.57671, -221.604 )
+scale = Vector2( 0.625, 1.66667 )
+
+[node name="Drink2" type="Sprite" parent="Plate"]
+visible = false
+position = Vector2( -49.1878, -166.512 )
+scale = Vector2( 0.625, 1.66667 )
+
+[node name="Drink3" type="Sprite" parent="Plate"]
+visible = false
+position = Vector2( 73.3913, -161.615 )
+scale = Vector2( 0.625, 1.66667 )

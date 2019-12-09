@@ -4,6 +4,9 @@ export (int) var max_interaction_cooldown = 100
 export (int) var speed = 200
 export (int) var items_limit = 3
 
+var drink_icons = ["res://assets/drinkicon_blue.png", "res://assets/drinkicon_green.png", "res://assets/drinkicon_red.png"]
+export (Array) var drink_sprites
+
 onready var anim_player = $AnimationPlayer
 onready var interaction_range = $InteractionRange
 onready var speech_bubble = $SpeechBubble
@@ -45,7 +48,27 @@ func check_interactions():
 	if interaction_cooldown <= 0 and Input.is_action_pressed("interact"):
 		interaction_cooldown = max_interaction_cooldown
 		closest.interact(self)
-		print(items)
+
+func add_drink(drink_type):
+	items.append(drink_type)
+	for i in range(items_limit):
+		var sprite = get_node(drink_sprites[i])
+		if !sprite.visible:
+			sprite.visible = true
+			sprite.texture = load(drink_icons[drink_type])
+			break
+
+func remove_drink(drink_type, recipient):
+	for i in range(items.size):
+		if items[i] == drink_type:
+			items.erase(items[i])
+			get_node(drink_sprites[i]).visible = false;
+			break
+
+func clear_drinks():
+	items = []
+	for drink in drink_sprites:
+		get_node(drink).visible = false;
 
 func move():
 	var velocity = Vector2()

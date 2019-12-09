@@ -13,7 +13,7 @@ func is_interactable(player):
 
 
 func interact(player):
-	player.items.append(item)
+	player.add_drink(item)
 	bar.move_cups(1)
 
 func get_icon_path():

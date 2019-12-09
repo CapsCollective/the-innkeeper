@@ -7,7 +7,7 @@ func is_interactable(player):
 
 func interact(player):
 	bar.move_cups(-player.items.size())
-	player.items = []
+	player.clear_drinks()
 	
 func get_icon_path():
 	return "res://assets/drinkicon_blue.png"
