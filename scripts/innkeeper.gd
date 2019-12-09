@@ -7,6 +7,8 @@ export (int) var speed = 200
 onready var anim_player = $AnimationPlayer
 onready var interaction_range = $InteractionRange
 
+var items = []
+
 func _physics_process(_delta):
 	move()
 
