@@ -15,9 +15,12 @@ zoom = Vector2( 3, 3 )
 format = 1
 
 [node name="Innkeeper" parent="." instance=ExtResource( 1 )]
-position = Vector2( 148.608, 283.442 )
+position = Vector2( 1519.85, 1144.09 )
+speed = 400
 
 [node name="Bar" parent="." instance=ExtResource( 2 )]
-position = Vector2( 514.798, 175.283 )
+position = Vector2( 2375.58, 1141.2 )
 
 [node name="GrainOverlay" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2023.96, 657.985 )
+scale = Vector2( 1.17546, 1.17546 )
