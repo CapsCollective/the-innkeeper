@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/bg.png" type="Texture" id=1]
 [ext_resource path="res://scenes/innkeeper.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/bar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/grain_overlay.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Table.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array(  )
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 523.15 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,7 +22,7 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 
 [node name="Innkeeper" parent="." instance=ExtResource( 2 )]
-position = Vector2( 148.608, 283.442 )
+position = Vector2( 148.608, 437.229 )
 scale = Vector2( 0.5, 0.494854 )
 
 [node name="Bar" parent="." instance=ExtResource( 3 )]
@@ -23,3 +32,53 @@ scale = Vector2( 0.5, 0.5 )
 [node name="GrainOverlay" parent="." instance=ExtResource( 4 )]
 position = Vector2( 479.055, 352.322 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="Table" parent="." instance=ExtResource( 5 )]
+position = Vector2( 683.303, 272.296 )
+scale = Vector2( 0.492966, 0.492966 )
+
+[node name="Table2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 257.338, 269.618 )
+scale = Vector2( 0.492966, 0.492966 )
+
+[node name="Path2D" type="Path2D" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 0.887695 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 1074.11, 300.04 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 17.8005, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0.892639, 357.054 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 823.902, 30.3496 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 0.892639, 357.054 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 823.902, 694.995 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 0.892639, 357.054 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 938.212, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 0.892639, 357.054 )
+shape = SubResource( 2 )
