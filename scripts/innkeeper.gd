@@ -25,11 +25,17 @@ func check_interactions():
 	if overlapping_areas.empty():
 		available_interactable = null
 	else:
+		var min_dist = 10000000000.0
+		var closest
 		for area in overlapping_areas:
-			available_interactable = area
+			var distance = (area.global_position - position).length()
+			if distance < min_dist:
+				min_dist = distance
+				closest = area
+			available_interactable = closest
 
 func display_interactions():
-	if interaction_cooldown <= 0 and items.size() < items_limit:
+	if interaction_cooldown <= 0 and items.size() < items_limit and available_interactable:
 		if Input.is_action_pressed("interact"):
 			items.append(available_interactable.dispense())
 			interaction_cooldown = max_interaction_cooldown

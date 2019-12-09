@@ -120,6 +120,7 @@ radius = 211.794
 ]]
 z_index = 1
 script = ExtResource( 1 )
+max_interaction_cooldown = 50
 items_limit = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
