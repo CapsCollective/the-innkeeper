@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/cuptop_empty.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.72565, 4.6985 )
+extents = Vector2( 4.72565, 3.734 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 14.0886, 22.7337 )
@@ -17,7 +17,7 @@ script = ExtResource( 1 )
 cups = [ NodePath("EmptyCup1"), NodePath("EmptyCup2"), NodePath("EmptyCup3"), NodePath("EmptyCup4"), NodePath("EmptyCup5"), NodePath("EmptyCup6"), NodePath("EmptyCup7"), NodePath("EmptyCup8") ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3.61151, 5.64808 )
+position = Vector2( 3.61151, 15.6233 )
 scale = Vector2( 48.88, 14.48 )
 shape = SubResource( 1 )
 
