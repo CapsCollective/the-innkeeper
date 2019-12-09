@@ -7,89 +7,87 @@
 [ext_resource path="res://assets/cuptop_empty.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.64882, 6.95974 )
+extents = Vector2( 4.72565, 4.6985 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 45.6228, 41.5264 )
+extents = Vector2( 14.0886, 22.7337 )
 
 [node name="Bar" type="StaticBody2D"]
-scale = Vector2( 1.25, 1.25 )
 script = ExtResource( 1 )
 cups = [ NodePath("EmptyCup1"), NodePath("EmptyCup2"), NodePath("EmptyCup3"), NodePath("EmptyCup4"), NodePath("EmptyCup5"), NodePath("EmptyCup6"), NodePath("EmptyCup7"), NodePath("EmptyCup8") ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3.08649, 6.17311 )
+position = Vector2( 3.61151, 5.64808 )
 scale = Vector2( 48.88, 14.48 )
 shape = SubResource( 1 )
 
 [node name="BarSprite" type="Sprite" parent="."]
-position = Vector2( 0.094101, 0 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="TapWine" parent="." instance=ExtResource( 3 )]
-position = Vector2( 88.4702, 128.561 )
+position = Vector2( 44.1831, 27.0338 )
 item = 2
 
 [node name="TapAle" parent="." instance=ExtResource( 3 )]
-position = Vector2( -57.46, 127.916 )
+position = Vector2( -29.415, 28.9611 )
 item = 1
 
 [node name="TapMead" parent="." instance=ExtResource( 3 )]
-position = Vector2( -202.268, 127.412 )
+position = Vector2( -101.433, 28.8488 )
 
 [node name="Sink" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 88.4702, 128.561 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sink"]
-position = Vector2( 179.086, 41.5535 )
+position = Vector2( 43.1081, -78.6742 )
 shape = SubResource( 2 )
 
 [node name="EmptyCup1" type="Sprite" parent="."]
-position = Vector2( 373.516, -38.3141 )
+position = Vector2( 187.492, -19.6122 )
 rotation = 0.781973
-scale = Vector2( 0.18, 0.18 )
+scale = Vector2( 0.09, 0.09 )
 texture = ExtResource( 5 )
 
 [node name="EmptyCup2" type="Sprite" parent="."]
-position = Vector2( 411.835, -34.9612 )
+position = Vector2( 206.701, -17.1587 )
 rotation = 0.781973
-scale = Vector2( 0.18, 0.18 )
+scale = Vector2( 0.09, 0.09 )
 texture = ExtResource( 5 )
 
 [node name="EmptyCup3" type="Sprite" parent="."]
-position = Vector2( 379.743, 1.44205 )
+position = Vector2( 188.998, -1.21546 )
 rotation = 0.781973
-scale = Vector2( 0.18, 0.18 )
+scale = Vector2( 0.09, 0.09 )
 texture = ExtResource( 5 )
 
 [node name="EmptyCup4" type="Sprite" parent="."]
-position = Vector2( 417.583, 2.40002 )
+position = Vector2( 207.502, 1.5412 )
 rotation = 0.781973
-scale = Vector2( 0.18, 0.18 )
+scale = Vector2( 0.09, 0.09 )
 texture = ExtResource( 5 )
 
 [node name="EmptyCup5" type="Sprite" parent="."]
-position = Vector2( 384.533, 41.1982 )
+position = Vector2( 191.09, 17.8559 )
 rotation = 0.781973
-scale = Vector2( 0.18, 0.18 )
+scale = Vector2( 0.09, 0.09 )
 texture = ExtResource( 5 )
 
 [node name="EmptyCup6" type="Sprite" parent="."]
-position = Vector2( 419.02, 42.1562 )
+position = Vector2( 208.714, 20.3877 )
 rotation = 0.781973
-scale = Vector2( 0.18, 0.18 )
+scale = Vector2( 0.09, 0.09 )
 texture = ExtResource( 5 )
 
 [node name="EmptyCup7" type="Sprite" parent="."]
-position = Vector2( 389.802, 79.0384 )
+position = Vector2( 193.289, 37.688 )
 rotation = 0.781973
-scale = Vector2( 0.18, 0.18 )
+scale = Vector2( 0.09, 0.09 )
 texture = ExtResource( 5 )
 
 [node name="EmptyCup8" type="Sprite" parent="."]
-position = Vector2( 423.81, 79.9963 )
+position = Vector2( 210.776, 39.1704 )
 rotation = 0.781973
-scale = Vector2( 0.18, 0.18 )
+scale = Vector2( 0.09, 0.09 )
 texture = ExtResource( 5 )
