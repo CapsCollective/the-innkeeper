@@ -6,6 +6,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 1526.39, 886.162 )
 current = true
 zoom = Vector2( 3, 3 )
 
@@ -13,9 +14,9 @@ zoom = Vector2( 3, 3 )
 format = 1
 
 [node name="Innkeeper" parent="." instance=ExtResource( 1 )]
-position = Vector2( 99.38, 437.3 )
-scale = Vector2( 1.77602, 1.75532 )
+position = Vector2( 1235.73, 1315.74 )
+max_interaction_cooldown = 50
+speed = 400
 
 [node name="Bar" parent="." instance=ExtResource( 2 )]
-position = Vector2( 721.023, 410.798 )
-scale = Vector2( 0.506597, 0.506597 )
+position = Vector2( 2158.7, 1189.65 )
