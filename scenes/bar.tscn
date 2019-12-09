@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scenes/bar.gd" type="Script" id=1]
+[ext_resource path="res://scripts/bar.gd" type="Script" id=1]
 [ext_resource path="res://assets/bar.png" type="Texture" id=2]
 [ext_resource path="res://scenes/tap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/sink.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-
 extents = Vector2( 9.64882, 6.95974 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 45.6228, 41.5264 )
 
 [node name="Bar" type="StaticBody2D"]
 scale = Vector2( 1.25, 1.25 )
@@ -17,22 +20,31 @@ position = Vector2( 3.08649, 6.17311 )
 scale = Vector2( 48.88, 14.48 )
 shape = SubResource( 1 )
 
-[node name="Bar" type="Sprite" parent="."]
-editor/display_folded = true
+[node name="BarSprite" type="Sprite" parent="."]
 position = Vector2( 0.094101, 0 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 
-[node name="Tap3" parent="Bar" instance=ExtResource( 3 )]
-position = Vector2( 88.3761, 128.561 )
+[node name="TapWine" parent="." instance=ExtResource( 3 )]
+position = Vector2( 88.4702, 128.561 )
+scale = Vector2( 1, 1 )
 item = 2
 
-[node name="Tap4" parent="Bar" instance=ExtResource( 3 )]
-position = Vector2( 257.955, 129.086 )
-item = 3
-
-[node name="Tap2" parent="Bar" instance=ExtResource( 3 )]
-position = Vector2( -57.5541, 127.916 )
+[node name="TapAle" parent="." instance=ExtResource( 3 )]
+position = Vector2( -57.46, 127.916 )
+scale = Vector2( 1, 1 )
 item = 1
 
-[node name="Tap" parent="Bar" instance=ExtResource( 3 )]
-position = Vector2( -202.362, 127.412 )
+[node name="TapMead" parent="." instance=ExtResource( 3 )]
+position = Vector2( -202.268, 127.412 )
+scale = Vector2( 1, 1 )
+
+[node name="Sink" type="Area2D" parent="."]
+position = Vector2( 88.4702, 128.561 )
+scale = Vector2( 1, 1 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sink"]
+position = Vector2( 179.086, 41.5535 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 2 )
