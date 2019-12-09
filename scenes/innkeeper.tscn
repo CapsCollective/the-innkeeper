@@ -116,11 +116,12 @@ tracks/3/keys = {
 radius = 211.794
 
 [node name="Innkeeper" type="KinematicBody2D" groups=[
-"active_dude",
 "dude",
+"active_dude",
 ]]
 z_index = 1
 script = ExtResource( 1 )
+max_interaction_cooldown = 50
 items_limit = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
