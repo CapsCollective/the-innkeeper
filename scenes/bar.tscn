@@ -4,12 +4,12 @@
 [ext_resource path="res://scenes/tap.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.64882, 10.4619 )
+extents = Vector2( 9.47533, 8.92246 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 6.00162, -8.57376 )
+position = Vector2( 1.71469, 17.1475 )
 scale = Vector2( 48.88, 14.48 )
 shape = SubResource( 1 )
 

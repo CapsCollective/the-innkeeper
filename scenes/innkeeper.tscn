@@ -8,6 +8,7 @@ radius = 73.9998
 
 [sub_resource type="Animation" id=2]
 resource_name = "rest"
+length = 0.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("BodySprite:position")

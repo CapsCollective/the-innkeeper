@@ -14,7 +14,9 @@ zoom = Vector2( 3, 3 )
 format = 1
 
 [node name="Innkeeper" parent="." instance=ExtResource( 1 )]
-position = Vector2( 148.608, 283.442 )
+position = Vector2( 296.102, -207.726 )
+scale = Vector2( 0.8, 0.8 )
+speed = 1000
 
 [node name="Bar" parent="." instance=ExtResource( 2 )]
 position = Vector2( 514.798, 175.283 )
