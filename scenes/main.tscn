@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/innkeeper.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/tap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/bar.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,9 +11,5 @@ format = 1
 [node name="Innkeeper" parent="." instance=ExtResource( 1 )]
 position = Vector2( 148.608, 283.442 )
 
-[node name="Area2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 653.149, 172.53 )
-
-[node name="Area2D2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 653.874, 340.711 )
-item = 2
+[node name="Bar" parent="." instance=ExtResource( 2 )]
+position = Vector2( 514.798, 175.283 )
