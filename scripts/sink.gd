@@ -1,0 +1,13 @@
+extends Node
+
+onready var bar = get_parent()
+
+func is_interactable(player):
+	return not player.items.empty()
+
+func interact(player):
+	bar.cups_available += player.items.size()
+	player.items = []
+	
+func get_icon_path():
+	return "res://assets/drinkicon_blue.png"
