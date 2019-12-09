@@ -64,6 +64,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [ 3, 2 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Plate:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 143.249, -21.8277 ), Vector2( 147.031, 7.67155 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "walk"
@@ -287,7 +299,6 @@ shape = SubResource( 1 )
 [node name="BodySprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 4
-frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 2 )
@@ -335,6 +346,7 @@ anims/opening = SubResource( 7 )
 script = ExtResource( 6 )
 
 [node name="Plate" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 143.249, -21.8277 )
 scale = Vector2( 0.8, 0.3 )
 texture = ExtResource( 7 )
