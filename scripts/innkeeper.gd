@@ -17,6 +17,7 @@ func _physics_process(_delta):
 	
 	if interaction_cooldown > 0:
 		interaction_cooldown -= 1
+	print(items)
 
 func check_interactions():
 	var overlapping_areas = interaction_range.get_overlapping_areas()
@@ -27,7 +28,7 @@ func check_interactions():
 			available_interactable = area
 
 func display_interactions():
-	if interaction_cooldown <= 0 and items.size() <= 4:
+	if interaction_cooldown <= 0 and items.size() < 4:
 		if Input.is_action_pressed("interact"):
 			items.append(available_interactable.dispense())
 			interaction_cooldown = max_interaction_cooldown

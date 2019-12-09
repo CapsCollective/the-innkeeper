@@ -12,4 +12,8 @@ format = 1
 position = Vector2( 148.608, 283.442 )
 
 [node name="Area2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 653.149, 171.805 )
+position = Vector2( 653.149, 172.53 )
+
+[node name="Area2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 653.874, 340.711 )
+item = 2
