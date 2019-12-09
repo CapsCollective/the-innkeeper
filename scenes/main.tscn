@@ -7,14 +7,14 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="bg" type="Sprite" parent="."]
+[node name="Background" type="Sprite" parent="."]
 position = Vector2( 481.517, 357.773 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 
 [node name="Innkeeper" parent="." instance=ExtResource( 2 )]
 position = Vector2( 148.608, 283.442 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.5, 0.494854 )
 
 [node name="Bar" parent="." instance=ExtResource( 3 )]
 position = Vector2( 666.883, 502.258 )
