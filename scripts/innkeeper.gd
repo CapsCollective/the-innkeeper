@@ -63,8 +63,8 @@ func add_drink(drink_type):
 			sprite.texture = load(drink_icons[drink_type])
 			break
 
-func remove_drink(drink_type, recipient):
-	for i in range(items.size):
+func remove_drink(drink_type):
+	for i in range(items.size()):
 		if items[i] == drink_type:
 			items.erase(items[i])
 			get_node(drink_sprites[i]).visible = false;
