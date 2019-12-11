@@ -25,7 +25,12 @@ func _physics_process(_delta):
 		interaction_cooldown -= 1
 
 func check_interactions():
-	var overlapping_areas = interaction_range.get_overlapping_areas()
+	var objects = interaction_range.get_overlapping_areas()
+	objects = objects + interaction_range.get_overlapping_bodies()
+	var overlapping_areas = []
+	for i in range(objects.size()):
+		if objects[i].is_in_group("interactable"):
+			overlapping_areas.append(objects[i])
 	if overlapping_areas.empty():
 		speech_bubble.visible = false
 		bubble_open = false
