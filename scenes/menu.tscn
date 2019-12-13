@@ -11,48 +11,12 @@ length = 5.0
 loop = true
 step = 1.0
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 482.997, 364.821 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.5, 0.5 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 1, 2, 3, 4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
@@ -64,15 +28,13 @@ size = 29
 font_data = ExtResource( 4 )
 
 [node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 
 [node name="mainmenu" type="Sprite" parent="."]
-position = Vector2( 481.272, 360.22 )
+position = Vector2( 480, 360 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 hframes = 5
-frame = 1
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="mainmenu"]
 autoplay = "cycle"
